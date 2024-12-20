@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/tailwind.min.css">
+
+  <style>
+    
+    @font-face {
+      font-family: iconfonttotal;
+      src: url("style/font_2339008_6lnn8nwnolr.woff2?t=1720001710830") format("woff2"),
+        url("style/font_2339008_6lnn8nwnolr.woff?t=1720001710830") format("woff"),
+        url("style/font_2339008_6lnn8nwnolr.ttf?t=1720001710830") format("truetype")
+    }
+
+    .iconfontheader {
+      font-family: iconfonttotal;
+      font-size: 16px;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
+    }
+
+    .iconnew:before {
+      content: "\E50D"
+    }
+
+    .iconmeizihuadongbutton-you:before {
+      content: "\E6A1"
+    }
+
+    .iconzhankaijiantou-xia:before {
+      content: "\E6A5"
+    }
+
+    .iconzhankaijiantou-shang:before {
+      content: "\E6A3"
+    }
+
+    .iconTriangle:before {
+      content: "\E6B9"
+    }
+
+    .iconclose:before {
+      content: "\E681"
+    }
+
+    .kuaijiezhuomian-24-mian:before {
+      content: "\E693"
+    }
+
+    .shouji-24-mian:before {
+      content: "\E6B6"
+    }
+
+    .HD-24-mian:before {
+      content: "\E6A7"
+    }
+
+    .xiazai-24-mian:before {
+      content: "\E624"
+    }
+
+    .jiemuhuadong-16-xian:before {
+      content: "\E683"
+    }
+
+    .iconhuore-16-mian:before {
+      content: "\E69D"
+    }
+
+    .iconkefu-24-mian:before {
+      content: "\E6A6"
+    }
+
+    .iconzhiding:before {
+      content: "\E69F"
+    }
+
+    .iconhuiyuanjingxuan:before {
+      content: "\E6AA"
+    }
+
+    .iconhuanyihuan:before {
+      content: "\E69B"
+    }
+
+    .iconyoutiao-24-xian:before {
+      content: "\E6A1"
+    }
+
+    .iconjiaguanzhu-28-mian:before {
+      content: "\E6AB";
+      display: inline-block
+    }
+
+    .iconshoucang-24-mian1:before {
+      content: "\E700"
+    }
+
+    .iconchuangzuozhongxin-24-mian:before {
+      content: "\E6A9"
+    }
+
+    .iconHD-24-mian:before {
+      content: "\E6A7"
+    }
+
+    .iconlishi-mian-24:before {
+      content: "\E6A8"
+    }
+
+    .iconshaixuan-main-24:before {
+      content: "\E6DD"
+    }
+
+    .iconkehuduan-main-24:before {
+      content: "\E607"
+    }
+
+    .iconlanguage-main-24:before {
+      content: "\E6F3"
+    }
+
+    .iconintappDownload-main-24:before {
+      content: "\E6F1"
+    }
+
+    .iconjisuxiazai-24-mian:before {
+      content: "\E6B1"
+    }
+
+    .icondingdao-24-guankanlishi:before {
+      content: "\E6B3"
+    }
+
+    .icon-localfile-main-24:before {
+      content: "\E6D8"
+    }
+
+    .icon-localplay-main-24:before {
+      content: "\E6D0"
+    }
+
+    .icon-reload-main-24:before {
+      content: "\E6D6"
+    }
+
+    .icon-search:before {
+      content: "\E6DF"
+    }
+
+    .icon-favor:before {
+      content: "\E6DB"
+    }
+
+    .icon-favored:before {
+      content: "\E62A"
+    }
+
+    .icon-mute:before {
+      content: "\E6DA"
+    }
+
+    .icon-muted:before {
+      content: "\E6DC"
+    }
+
+    .icon-searchClear:before {
+      content: "\E681"
+    }
+
+    .icon-vip:before {
+      content: "\E6E1"
+    }
+
+    .SVIP:before {
+      content: "\E704";
+      font-size: 10px
+    }
+  </style>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+
+    .logo {
+      width: 70px;
+      height: auto;
+      margin: 0 0 0 26px;
+    }
+
+    .usercenter_user_center_box .usercenter_avatar {
+      display: block;
+      width: 42px;
+      height: 42px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      -webkit-app-region: no-drag;
+    }
+
+    .usercenter_user_center_box {
+      position: relative;
+      margin: 14px 46px 0 9px;
+      text-align: center;
+      direction: ltr;
+      float: left;
+      padding-bottom: 10px;
+    }
+
+    .historyrecord_urecord .historyrecord_recordicon {
+      text-align: center;
+      font-size: 24px;
+      color: hsla(0, 0%, 100%, .6);
+      width: 42px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .historyrecord_urecord {
+      text-align: center;
+      float: left;
+      position: relative;
+      z-index: 6;
+      -webkit-app-region: no-drag;
+    }
+
+
+
+    .topheader_top_header_box .topheader_utils_box {
+      float: right;
+      display: flex;
+    }
+
+
+
+    .search_search_box {
+      width: 465px;
+      height: 40px;
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, .2);
+      border: 1px solid hsla(0, 0%, 100%, .2);
+      position: relative;
+      margin-left: 67px;
+      text-align: left;
+      -webkit-app-region: no-drag;
+    }
+
+    .search-input_input_box {
+      float: left;
+      height: 40px;
+      text-align: left;
+      background-color: initial;
+      position: relative;
+      padding-left: 36px;
+      line-height: 43px;
+    }
+
+
+    .search-input_input_box input {
+      background-color: initial;
+      border: 0;
+      width: 335px;
+      height: 20px;
+      outline: 0 none;
+      caret-color: hsla(0, 0%, 100%, .6);
+      color: hsla(0, 0%, 100%, .6);
+      font-size: 16px;
+      font-weight: 400;
+      box-sizing: border-box !important;
+      margin-right: 9px;
+      padding-right: 32px;
+      margin-top: 10px;
+    }
+
+    .search_search_box .search_hot_search_box {
+      float: left;
+      width: 82px;
+      height: 40px;
+      line-height: 40px;
+    }
+
+    .search-input_input_box .search-input_icon_box {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      font-size: 20px;
+      color: hsla(0, 0%, 100%, .5);
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      left: 12px;
+      line-height: 20px;
+    }
+
+    .search_search_box .search_hot_search_box .search_hot_search {
+      font-size: 16px;
+      line-height: 20px;
+      color: hsla(0, 0%, 100%, .5);
+      margin-right: 12px;
+      font-weight: 400;
+    }
+
+    .search_search_box .search_hot_search_box .search_fire {
+      color: hsla(0, 0%, 100%, .5);
+    }
+
+    .search_search_box .search_hot_search_box .search_hot_search_box_title {
+      height: 100%;
+    }
+
+    .search_search_box .search_search_list {
+      position: absolute;
+      top: 48px;
+      left: 0;
+      width: 465px;
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, .9);
+      z-index: 1;
+    }
+
+
+    .topnav {
+
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 2001;
+      width: 100%;
+      background-image: linear-gradient(180deg, rgba(22, 22, 26, .2), rgba(22, 22, 26, 0));
+      min-height: 70px;
+
+    }
+
+    .historyrecord_urecord .historyrecord_recordicon:hover {
+      color: #00a9f5
+    }
+
+    .search_search_box .search_hot_search_box .search_selected,
+    .search_search_box .search_hot_search_box:hover .search_fire,
+    .search_search_box .search_hot_search_box:hover .search_hot_search {
+      color: #00a9f5
+    }
+
+    .topheader_scroll_class {
+      -webkit-animation-name: topheader_top_header_scroll-in-animation;
+      animation-name: topheader_top_header_scroll-in-animation;
+      -webkit-animation-duration: .3s;
+      animation-duration: .3s;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+    }
+
+    .topheader_scroll_no_class {
+      -webkit-animation-name: topheader_top_header_scroll_no-in-animation;
+      animation-name: topheader_top_header_scroll_no-in-animation;
+      -webkit-animation-duration: .5s;
+      animation-duration: .5s;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in
+    }
+
+    @keyframes topheader_top_header_scroll-in-animation {
+      0% {
+        background-color: initial
+      }
+
+      to {
+        background-color: #16161a
+      }
+    }
+
+
+    @keyframes topheader_top_header_scroll_no-in-animation {
+      0% {
+        background-color: #16161a
+      }
+
+      to {
+        background-color: initial
+      }
+    }
+
+
+
+    .search_focus_search_box {
+      width: 480px;
+      border: 1px solid #00a9f5;
+      background-color: rgba(0, 0, 0, .9);
+    }
+
+    .search_search_box .search_focus_button img {
+      width: 20px;
+      height: 20px;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    .search_search_box .search_focus_button {
+      display: inline-block;
+      width: 43px;
+      height: 42px;
+      background-color: #00a9f5;
+      color: #000;
+      line-height: 42px;
+      text-align: center;
+      border-radius: 0 10px 10px 0;
+      position: relative;
+      top: -1px;
+      right: -1px;
+      cursor: pointer;
+    }
+
+    .search_search_box .search_search_list {
+      position: absolute;
+      top: 48px;
+      left: 0;
+      width: 465px;
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, .9);
+      z-index: 1;
+    }
+
+
+    .keyword-search-list_sugsearchlist {
+      margin: 9px 0;
+    }
+
+
+    .keyword-search-list_sugsearchlist .keyword-search-list_sugitem {
+      display: block;
+      text-align: left;
+      height: 46px;
+      padding: 0 14px;
+      font-size: 16px;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      color: #eaeaea;
+      font-weight: 400;
+    }
+
+    .keyword-search-list_tag {
+      display: inline-block;
+      padding: 0 2px;
+      height: 16px;
+      line-height: 16px;
+      margin-left: 6px;
+      font-size: 12px;
+      border-top-left-radius: 7px;
+      border-top-right-radius: 7px;
+      border-bottom-right-radius: 7px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .keyword-search-list_sugsearchlist .keyword-search-list_sugitemhover {
+      color: #00a9f5;
+      height: 61px;
+      padding: 14px;
+    }
+
+
+
+
+    .keyword-search-list_sugsearchlist .keyword-search-list_sugitem .keyword-search-list_left_word,
+    .keyword-search-list_sugsearchlist .keyword-search-list_sugitem em {
+    font-style: normal;
+    font-weight: normal;
+      color: #00a9f5;
+    }
+
+    .keyword-search-list_sugsearchlist .keyword-search-list_sugitem:hover,
+    .keyword-search-list_sugsearchlist .keyword-search-list_sugnosubhover {
+      color: #00a9f5;
+      background-color: hsla(0, 0%, 100%, .06);
+    }
+
+    .keyword-search-list_tag .keyword-search-list_tagtext {
+      display: inline-block;
+      -webkit-transform: scale(.83);
+    }
+
+    .keyword-search-list_sugsearchlist .keyword-search-list_sugitem .keyword-search-list_sugitembox {
+      height: 100%;
+      align-items: center;
+      display: flex;
+    }
+
+  </style>
+
+
+</head>
+
+<body>
+
+  <nav>
+    <div class="topnav" id="topnavid">
+      <div class="flex">
+        <div class="leftbar" style="display:flex;flex-grow:1;flex-wrap:nowrap;align-items:center">
+          <div class="logo_hover">
+            <img class="logo" src="style/logo4.svg">
+          </div>
+          <div id="searchbox" class="search_search_box" onfocus="javascript:inputonfocus()"
+            onblur="javascript:inputonblur() ">
+            <div class="search-input_input_box " style="width:353px">
+              <span class="iconfontheader icon-search search-input_icon_box"></span>
+              <input placeholder="默杀" id="search-input-box" autocomplete="off" class=""
+                onfocus="javascript:inputonfocus()" onblur="javascript:inputonblur()" 
+                oninput="if(document.getElementById('search-input-box').value!='')maoyansug()"
+                style="color:;background-color:transparent;border-right:none" value="hi">
+            </div>
+            <div class="search_hot_search_box">
+              <div class="aplus_exp aplus_clk search_hot_search_box_title">
+                <span class="iconfontheader iconhuore-16-mian search_fire "></span>
+                <a class="search_hot_search " href="https://t.youku.com/yep/page/s/hot_search_rank"
+                  target="_blank">热搜榜</a>
+              </div>
+            </div>
+            <div class="aplus_exp aplus_clk search_focus_button" id="search_focus_button"
+              onclick="
+              window.open('http://so.youku.com/search_video/q_'+encodeURI(document.getElementById('search-input-box').value)+'?searchfrom=1')"><img
+                src="style/O1CN01TTI7vI1GYPt7FowfZ_!!6000000000634-2-tps-200-200.png"></div>
+
+            <div class="search_search_list" id="keyword-search-list_sugsearchlist">
+              <div class="keyword-search-list_sugsearchlist" data-spm="searchOperate" data-spm-max-idx="10">
+                <a class="aplus_exp keyword-search-list_sugitem
+                keyword-search-list_sugimgitem
+                
+                
+                false
+                false" href="javascript:void(0)" data-spm="d_title_1"
+                  data-scm="20140669.search.kubox.keyword_High 5 制霸青春" data-aplus-ae="x1467_3f38fbc2"
+                  data-spm-anchor-id="a2hja.14919748_WEBHOME_NEW.searchOperate.d_title_1">
+                  <div class="keyword-search-list_sugitembox">
+                    <div class="keyword-search-list_sugitemboxleft"><em>Hi</em>gh 5 制霸青春</div>
+                    <div class="keyword-search-list_tagbox"><span class="keyword-search-list_tag"
+                        style="background-color: rgb(0, 169, 245);"><span
+                          class="keyword-search-list_tagtext">独播</span></span></div>
+                  </div>
+                  <div class="keyword-search-list_sugitemhoverbox keyword-search-list_sugitemhoverboxnobtn">
+                    <div class="keyword-search-list_sugitemhoverboximg"
+                      style="background-image: url(&quot;http://m.ykimg.com/052600005D241DB7425BD9352548B04E&quot;);">
+                    </div>
+                    <div class="keyword-search-list_sugitemhovercontent">
+                      <div class="keyword-search-list_sugitemhovercontenttitle">
+                        <div class="keyword-search-list_sugitemboxleft"><em>Hi</em>gh 5 制霸青春</div>
+                        <div class="keyword-search-list_tagbox"><span class="keyword-search-list_tag"
+                            style="background-color: rgb(0, 169, 245);"><span
+                              class="keyword-search-list_tagtext">独播</span></span></div>
+                      </div>
+                      <div class="keyword-search-list_sugitemhovercontenttip">热血球魂点燃梦想</div>
+                    </div>
+                  </div>
+                </a><a class="aplus_exp keyword-search-list_sugitem
+                keyword-search-list_sugimgitem
+                
+                
+                false
+                false" href="javascript:void(0)" data-spm="d_title_2"
+                  data-scm="20140669.search.kubox.keyword_HIIT高效燃脂瘦身-初级"
+                  data-spm-anchor-id="a2hja.14919748_WEBHOME_NEW.searchOperate.d_title_2"
+                  data-aplus-ae="x1468_39387401">
+                  <div class="keyword-search-list_sugitembox">
+                    <div class="keyword-search-list_sugitemboxleft"><em>HI</em>IT高效燃脂瘦身-初级</div>
+                    <div class="keyword-search-list_tagbox"><span class="keyword-search-list_tag"
+                        style="background-color: rgba(255, 255, 255, 0.3);"><span
+                          class="keyword-search-list_tagtext">文化</span></span></div>
+                  </div>
+                  <div class="keyword-search-list_sugitemhoverbox keyword-search-list_sugitemhoverboxnobtn">
+                    <div class="keyword-search-list_sugitemhoverboximg"
+                      style="background-image: url(&quot;http://m.ykimg.com/052600005ECB88A14265930C6766E6A7&quot;);">
+                    </div>
+                    <div class="keyword-search-list_sugitemhovercontent">
+                      <div class="keyword-search-list_sugitemhovercontenttitle">
+                        <div class="keyword-search-list_sugitemboxleft"><em>HI</em>IT高效燃脂瘦身-初级</div>
+                        <div class="keyword-search-list_tagbox"><span class="keyword-search-list_tag"
+                            style="background-color: rgba(255, 255, 255, 0.3);"><span
+                              class="keyword-search-list_tagtext">文化</span></span></div>
+                      </div>
+                      <div class="keyword-search-list_sugitemhovercontenttip">减肥瘦身必备神器</div>
+                    </div>
+                  </div>
+                </a><a class="aplus_exp keyword-search-list_sugitem
+                keyword-search-list_sugimgitem
+                
+                
+                false
+                false" href="javascript:void(0)" data-spm="d_title_3" data-scm="20140669.search.kubox.keyword_Hi!鸭力"
+                  data-spm-anchor-id="a2hja.14919748_WEBHOME_NEW.searchOperate.d_title_3"
+                  data-aplus-ae="x1469_1f9cdf54">
+                  <div class="keyword-search-list_sugitembox">
+                    <div class="keyword-search-list_sugitemboxleft"><em>Hi</em>!鸭力</div>
+                    <div class="keyword-search-list_tagbox"><span class="keyword-search-list_tag"
+                        style="background-color: rgba(255, 255, 255, 0.3);"><span
+                          class="keyword-search-list_tagtext">国漫</span></span></div>
+                  </div>
+                  <div class="keyword-search-list_sugitemhoverbox keyword-search-list_sugitemhoverboxnobtn">
+                    <div class="keyword-search-list_sugitemhoverboximg"
+                      style="background-image: url(&quot;http://m.ykimg.com/05260000536F44CB67379F05FF0EFC60&quot;);">
+                    </div>
+                    <div class="keyword-search-list_sugitemhovercontent">
+                      <div class="keyword-search-list_sugitemhovercontenttitle">
+                        <div class="keyword-search-list_sugitemboxleft"><em>Hi</em>!鸭力</div>
+                        <div class="keyword-search-list_tagbox"><span class="keyword-search-list_tag"
+                            style="background-color: rgba(255, 255, 255, 0.3);"><span
+                              class="keyword-search-list_tagtext">国漫</span></span></div>
+                      </div>
+                      <div class="keyword-search-list_sugitemhovercontenttip">神经质鸭子的爆笑故事</div>
+                    </div>
+                  </div>
+                </a><a class="aplus_exp keyword-search-list_sugitem
+                keyword-search-list_sugimgitem
+                
+                
+                false
+                false" href="javascript:void(0)" data-spm="d_title_4"
+                  data-scm="20140669.search.kubox.keyword_hiphop初级课程"
+                  data-spm-anchor-id="a2hja.14919748_WEBHOME_NEW.searchOperate.d_title_4"
+                  data-aplus-ae="x1470_569f3554">
+                  <div class="keyword-search-list_sugitembox">
+                    <div class="keyword-search-list_sugitemboxleft"><em>hi</em>phop初级课程</div>
+                    <div class="keyword-search-list_tagbox"><span class="keyword-search-list_tag"
+                        style="background-color: rgba(255, 255, 255, 0.3);"><span
+                          class="keyword-search-list_tagtext">文化</span></span></div>
+                  </div>
+                  <div class="keyword-search-list_sugitemhoverbox keyword-search-list_sugitemhoverboxnobtn">
+                    <div class="keyword-search-list_sugitemhoverboximg"
+                      style="background-image: url(&quot;http://m.ykimg.com/0526000063ECA8BB13EBC60B93A0E2CE&quot;);">
+                    </div>
+                    <div class="keyword-search-list_sugitemhovercontent">
+                      <div class="keyword-search-list_sugitemhovercontenttitle">
+                        <div class="keyword-search-list_sugitemboxleft"><em>hi</em>phop初级课程</div>
+                        <div class="keyword-search-list_tagbox"><span class="keyword-search-list_tag"
+                            style="background-color: rgba(255, 255, 255, 0.3);"><span
+                              class="keyword-search-list_tagtext">文化</span></span></div>
+                      </div>
+                      <div class="keyword-search-list_sugitemhovercontenttip">酷帅街舞基础入门</div>
+                    </div>
+                  </div>
+                </a><a class="aplus_exp keyword-search-list_sugitem
+                keyword-search-list_sugimgitem
+                
+                
+                false
+                false" href="javascript:void(0)" data-spm="d_title_5"
+                  data-scm="20140669.search.kubox.keyword_hidance民族舞系列傣族舞蹈彩云之南"
+                  data-spm-anchor-id="a2hja.14919748_WEBHOME_NEW.searchOperate.d_title_5"
+                  data-aplus-ae="x1471_5a625d6b">
+                  <div class="keyword-search-list_sugitembox">
+                    <div class="keyword-search-list_sugitemboxleft"><em>hi</em>dance民族舞系列傣族舞蹈彩云之南</div>
+                    <div class="keyword-search-list_tagbox"><span class="keyword-search-list_tag"
+                        style="background-color: rgba(255, 255, 255, 0.3);"><span
+                          class="keyword-search-list_tagtext">文化</span></span></div>
+                  </div>
+                  <div class="keyword-search-list_sugitemhoverbox keyword-search-list_sugitemhoverboxnobtn">
+                    <div class="keyword-search-list_sugitemhoverboximg"
+                      style="background-image: url(&quot;http://m.ykimg.com/052600006359E97013EBC6095DF2A33F&quot;);">
+                    </div>
+                    <div class="keyword-search-list_sugitemhovercontent">
+                      <div class="keyword-search-list_sugitemhovercontenttitle">
+                        <div class="keyword-search-list_sugitemboxleft"><em>hi</em>dance民族舞系列傣族舞蹈彩云之南</div>
+                        <div class="keyword-search-list_tagbox"><span class="keyword-search-list_tag"
+                            style="background-color: rgba(255, 255, 255, 0.3);"><span
+                              class="keyword-search-list_tagtext">文化</span></span></div>
+                      </div>
+                      <div class="keyword-search-list_sugitemhovercontenttip">进阶版傣族舞教学</div>
+                    </div>
+                  </div>
+                </a><a class="aplus_exp keyword-search-list_sugitem
+                keyword-search-list_sugimgitem
+                
+                
+                false
+                false" href="javascript:void(0)" data-spm="d_title_6"
+                  data-scm="20140669.search.kubox.keyword_hiphop高级课程"
+                  data-spm-anchor-id="a2hja.14919748_WEBHOME_NEW.searchOperate.d_title_6"
+                  data-aplus-ae="x1472_177899df">
+                  <div class="keyword-search-list_sugitembox">
+                    <div class="keyword-search-list_sugitemboxleft"><em>hi</em>phop高级课程</div>
+                    <div class="keyword-search-list_tagbox"><span class="keyword-search-list_tag"
+                        style="background-color: rgba(255, 255, 255, 0.3);"><span
+                          class="keyword-search-list_tagtext">文化</span></span></div>
+                  </div>
+                  <div class="keyword-search-list_sugitemhoverbox keyword-search-list_sugitemhoverboxnobtn">
+                    <div class="keyword-search-list_sugitemhoverboximg"
+                      style="background-image: url(&quot;http://m.ykimg.com/0526000063ECA90413EB660AA2253DEF&quot;);">
+                    </div>
+                    <div class="keyword-search-list_sugitemhovercontent">
+                      <div class="keyword-search-list_sugitemhovercontenttitle">
+                        <div class="keyword-search-list_sugitemboxleft"><em>hi</em>phop高级课程</div>
+                        <div class="keyword-search-list_tagbox"><span class="keyword-search-list_tag"
+                            style="background-color: rgba(255, 255, 255, 0.3);"><span
+                              class="keyword-search-list_tagtext">文化</span></span></div>
+                      </div>
+                      <div class="keyword-search-list_sugitemhovercontenttip">酷炫街舞掌握动作</div>
+                    </div>
+                  </div>
+                </a><a class="aplus_exp keyword-search-list_sugitem
+                
+                
+                
+                false
+                false" href="javascript:void(0)" data-spm="d_title_7" data-scm="20140669.search.kubox.keyword_hi室友"
+                  data-spm-anchor-id="a2hja.14919748_WEBHOME_NEW.searchOperate.d_title_7"
+                  data-aplus-ae="x1473_25a795c5">
+                  <div class="keyword-search-list_sugitembox">
+                    <div class="keyword-search-list_sugitemboxleft"><em>hi</em>室友</div>
+                  </div>
+                </a><a class="aplus_exp keyword-search-list_sugitem
+                
+                
+                
+                false
+                false" href="javascript:void(0)" data-spm="d_title_8" data-scm="20140669.search.kubox.keyword_him的一生"
+                  data-spm-anchor-id="a2hja.14919748_WEBHOME_NEW.searchOperate.d_title_8"
+                  data-aplus-ae="x1474_3815481f">
+                  <div class="keyword-search-list_sugitembox">
+                    <div class="keyword-search-list_sugitemboxleft"><em>hi</em>m的一生</div>
+                  </div>
+                </a><a class="aplus_exp keyword-search-list_sugitem
+                
+                
+                
+                false
+                false" href="javascript:void(0)" data-spm="d_title_9"
+                  data-scm="20140669.search.kubox.keyword_him大战末影女王"
+                  data-spm-anchor-id="a2hja.14919748_WEBHOME_NEW.searchOperate.d_title_9"
+                  data-aplus-ae="x1475_195ce768">
+                  <div class="keyword-search-list_sugitembox">
+                    <div class="keyword-search-list_sugitemboxleft"><em>hi</em>m大战末影女王</div>
+                  </div>
+                </a><a class="aplus_exp keyword-search-list_sugitem
+                
+                
+                
+                false
+                false" href="javascript:void(0)" data-spm="d_title_10" data-scm="20140669.search.kubox.keyword_hi道奇"
+                  data-spm-anchor-id="a2hja.14919748_WEBHOME_NEW.searchOperate.d_title_10"
+                  data-aplus-ae="x1476_7476b32f">
+                  <div class="keyword-search-list_sugitembox">
+                    <div class="keyword-search-list_sugitemboxleft"><em>hi</em>道奇</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="topheader_utils_box">
+          <div class="historyrecord_urecord "><a title="播放记录"
+              href="javascript:window.open('https://faxian.youku.com/watch_record')" target=""
+              class="aplus_exp aplus_clk iconfontheader icondingdao-24-guankanlishi historyrecord_recordicon"></a>
+          </div>
+          <div class="usercenter_user_center_box   ">
+            <div class="usercenter_avatar"><a href="javascript:window.open('https://account.youku.com/');" target=""
+                class="aplus_exp aplus_clk"><img class="usercenter_avatar_img "
+                  src="style/O1CN01lr1KAH1eIQrB1u9ZK_!!6000000003848-2-tps-138-138.png" title="" alt=""></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // 滚动事件开始
+      var topnav = document.getElementById('topnavid');
+      window.addEventListener('scroll', function () {
+        var scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        //console.log("scroll ,scrollTop:"+scrollTop);
+        if (scrollTop > 300 && topnav.className.indexOf("topheader_scroll_class") < 0) {
+          topnav.classList.remove('topheader_scroll_no_class');
+          topnav.classList.add('topheader_scroll_class');
+        }
+        else if (scrollTop <= 300 && topnav.className.indexOf("topheader_scroll_class") >= 0) {
+          topnav.classList.remove('topheader_scroll_class');
+          topnav.classList.add('topheader_scroll_no_class');
+        }
+      });
+
+
+      function inputonfocus() {
+        document.getElementById('searchbox').classList.add('search_focus_search_box');
+        document.getElementById('search_focus_button').style.visibility = "visible";
+        document.getElementById('keyword-search-list_sugsearchlist').style.visibility = "visible";
+      }
+      function inputonblur() {
+        setTimeout(function () {
+          //1秒后执行刷新
+          document.getElementById('searchbox').classList.remove('search_focus_search_box');
+          document.getElementById('search_focus_button').style.visibility = "collapse";
+          document.getElementById('keyword-search-list_sugsearchlist').style.visibility = "collapse";
+        }, 150); //单位是毫秒
+      }
+
+      inputonblur();
+
+      function sugadd(q, sugs) {
+        var html = '';
+        //console.log(q);
+        sugs.forEach(function (sug) {
+          html += `
+        <a class="aplus_exp keyword-search-list_sugitem
+                
+                
+                
+                false
+                false" href="`
+            + "javascript:window.open('http://so.youku.com/search_video/q_" + encodeURI(sug) + "?searchfrom=2')"
+            + `" data-spm="d_title_10" data-scm="20140669.search.kubox.keyword_` + sug + `"
+                  data-spm-anchor-id="a2hja.14919748_WEBHOME_NEW.searchOperate.d_title_10"
+                  data-aplus-ae="x1476_7476b32f">
+                  <div class="keyword-search-list_sugitembox">
+                    <div class="keyword-search-list_sugitemboxleft">`+ sug.replace(q, `<em>` + q + `</em>`) + `</div>
+                  </div>
+                </a>
+        `;
+        });
+
+        document.getElementsByClassName("keyword-search-list_sugsearchlist")[0].innerHTML = html;
+
+      }
+
+
+      function maoyansug() {
+        function fetchData(url) {
+          // 使用 fetch API 发送 GET 请求  
+          fetch(url)
+            .then(response => {
+              // 检查响应状态码是否正常（200-299）  
+              if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+              }
+              // 返回 JSON 格式的数据  
+              return response.json();
+            })
+            .then(data => {
+              // 处理返回的数据  
+              //console.log('返回的数据:', data);
+              // 你可以在这里对返回的数据进行进一步的处理或显示  
+              var mlist=[];
+              data.movies.list.forEach(function (n) {
+                mlist.push(n.nm);
+            });
+              //console.log('返回的数据:', mlist);
+              sugadd(document.getElementById('search-input-box').value,mlist);
+            })
+            .catch(error => {
+              // 处理请求过程中的错误  
+              console.error('请求过程中发生错误:', error);
+            });
+        }
+        var url = 'https://apis.netstart.cn/maoyan/search/suggest?kw=#content#&cityId=1';
+        var content = encodeURI(document.getElementById('search-input-box').value);
+        url = url.replace("#content#", content);
+        fetchData(url);
+
+      }
+
+
+      function baidusug() {
+
+        //组装查询地址
+        var sugurl = "http://suggestion.baidu.com/su?wd=#content#&cb=window.baidu.sug";
+        var content = encodeURI(document.getElementById('search-input-box').value + " site:youku.com");
+        sugurl = sugurl.replace("#content#", content);
+
+        //定义回调函数
+        window.baidu = {
+          sug: function (json) {
+            console.log(json);
+            sugadd(document.getElementById('search-input-box').value, json.s);
+          }
+        }
+
+        //动态添加JS脚本
+        var script = document.createElement("script");
+        script.src = sugurl;
+        document.getElementsByTagName("head")[0].appendChild(script);
+
+      }
+
+      document.querySelectorAll('.keyword-search-list_sugitem').forEach(function (node) {
+        node.href = "javascript:window.open('http://so.youku.com/search_video/q_" + encodeURI(node.dataset.scm.split('_')[1]) + "?searchfrom=2')";
+        //console.log(node.href);
+      });
+
+    </script>
+  </nav>
+
+
+
+
+
+</body>
+
+</html>
